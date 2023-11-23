@@ -165,7 +165,13 @@ def thread_cycle():
             optionFour(cont, initialStation)
 
         elif int(inputs) == 5:
-            pass
+            print("Eliga tipo de grafo")
+            print("1. bfs")
+            print("2. dfs")
+            tipografo = str(input)
+            msg = "Estación Base: BusStopCode-ServiceNo (Ej: 75009-10): "
+            initialStation = input(msg)
+            controller.searchPaths(cont,initialStation,tipografo)
         elif int(inputs) == 6:
             destStation = input("Estación destino (Ej: 15151-10): ")
             optionSix(cont, initialStation, destStation)
@@ -183,12 +189,9 @@ def thread_cycle():
             print("1.bfs")
             print("2. dfs")
             searchMethod= str(input())
-            print("Ingrese la estacion inicial")
-            initialStation = (input())
-            searchMethod1 = optionFive(cont,initialStation,searchMethod)
-            print("ingrese la estacion final")
+            print("Ingrese Estacion destino")
             destStation = input()
-            optionNine(cont,destStation,searchMethod1)
+            optionNine(cont,destStation,searchMethod)
 
         elif int(inputs) == 10:
             # TODO Lab 11, completar inputs opt 10, destStation

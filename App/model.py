@@ -260,12 +260,16 @@ def searchPathTo(analyzer, destStation, method):
     """
     path = None
     # TODO Lab 11, ejecutar pathTo por dfs
+    listavacia = lt.newList("ARRAY_LIST")
     if method == "dfs":
         path = dfs.pathTo(analyzer["search"],destStation)
     # TODO Lab 11, ejecutar pathTo por bfs
     elif method == "bfs":
         path = bfs.pathTo(analyzer["search"],destStation)
-    return path
+    for i in lt.iterator(path):
+        lt.addLast(listavacia,i)
+    size = lt.size(listavacia)
+    return listavacia,size
 
 
 def totalStops(analyzer):

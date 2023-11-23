@@ -169,8 +169,8 @@ def thread_cycle():
             print("1. bfs")
             print("2. dfs")
             tipografo = str(input)
-            msg = "Estación Base: BusStopCode-ServiceNo (Ej: 75009-10): "
-            initialStation = input(msg)
+            print("Estación Base: BusStopCode-ServiceNo (Ej: 75009-10): ")
+            initialStation = input()
             optionFive(cont,initialStation,tipografo)
         elif int(inputs) == 6:
             destStation = input("Estación destino (Ej: 15151-10): ")

@@ -95,7 +95,7 @@ def optionFour(cont, initialStation):
 
 def optionFive(cont, initialStation, searchMethod):
     # TODO Lab 11, conectar con la funcion del controller searchPaths
-    pass
+    return controller.searchPaths(cont,initialStation,searchMethod)
 
 
 def optionSix(cont, initialStation, destStation):
@@ -125,7 +125,7 @@ def optionEight(cont):
 
 def optionNine(cont, destStation, searchMethod):
     # TODO Lab 11, conectar con la funcion del controller hasSearchPath
-    haspath = None
+    haspath = controller.searchPathTo(cont,destStation,searchMethod)
     print(haspath)
 
 
@@ -133,7 +133,7 @@ def optionTen(cont, destStation, searchMethod):
     # TODO Lab 11, conectar con la funcion del controller searchPathTo
     path = None
     if path is not None:
-        pass
+        print(path = controller.hasSearchPath(cont,destStation,searchMethod))
     else:
         print('No hay camino')
 
@@ -165,9 +165,7 @@ def thread_cycle():
             optionFour(cont, initialStation)
 
         elif int(inputs) == 5:
-            # TODO Lab 11, completar inputs opt 5, searchMethod, initialStation
             pass
-
         elif int(inputs) == 6:
             destStation = input("Estación destino (Ej: 15151-10): ")
             optionSix(cont, initialStation, destStation)
@@ -181,11 +179,25 @@ def thread_cycle():
 
         elif int(inputs) == 9:
             # TODO Lab 11, completar inputs opt 9, destStation
-            pass
+            print("Ingrese el metodo de busqueda que desea usar")
+            print("1.bfs")
+            print("2. dfs")
+            searchMethod= str(input())
+            print("Ingrese la estacion inicial")
+            initialStation = (input())
+            searchMethod1 = optionFive(cont,initialStation,searchMethod)
+            print("ingrese la estacion final")
+            destStation = input()
+            optionNine(cont,destStation,searchMethod1)
 
         elif int(inputs) == 10:
             # TODO Lab 11, completar inputs opt 10, destStation
-            pass
+            destStation = input("Estación destino (Ej: 15151-10): ")
+            print("Ingrese el metodo de busqueda que desea usar")
+            print("1. bfs")
+            print("2. dfs")
+            searchMethod = str(input())
+            optionTen(cont,destStation,searchMethod)
 
         else:
             sys.exit(0)

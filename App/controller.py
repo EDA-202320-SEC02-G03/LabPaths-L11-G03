@@ -134,7 +134,7 @@ def searchPaths(analyzer, initialStation, searchMethod):
     todas las otras estaciones del sistemas
     """
     # TODO Lab 11, conectar con la funcion del model searchPaths
-    return None
+    return model.searchPaths(analyzer,initialStation,searchMethod)
 
 
 def hasSearchPath(analyzer, destStation, searchMethod):
@@ -143,7 +143,7 @@ def hasSearchPath(analyzer, destStation, searchMethod):
     el metodo de busqueda ("bfs" o "dfs")
     """
     # TODO Lab 11, conectar con la funcion del model hasSearchPath
-    return None
+    return model.hasSearchPath(analyzer,destStation,searchMethod)
 
 
 def searchPathTo(analyzer, destStation, searchMethod):
@@ -151,7 +151,7 @@ def searchPathTo(analyzer, destStation, searchMethod):
     Retorna el camino de busqueda entre initialStation y destStation
     """
     # TODO Lab 11, conectar con la funcion del model searchPathTo
-    return None
+    return model.searchPathTo(analyzer,destStation,searchMethod)
 
 
 def servedRoutes(analyzer):

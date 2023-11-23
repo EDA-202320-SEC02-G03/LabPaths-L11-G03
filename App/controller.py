@@ -151,7 +151,8 @@ def searchPathTo(analyzer, destStation, searchMethod):
     Retorna el camino de busqueda entre initialStation y destStation
     """
     # TODO Lab 11, conectar con la funcion del model searchPathTo
-    return model.searchPathTo(analyzer,destStation,searchMethod)
+    a =  model.searchPathTo(analyzer,destStation,searchMethod)
+    return a
 
 
 def servedRoutes(analyzer):

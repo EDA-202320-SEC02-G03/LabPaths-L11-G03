@@ -125,15 +125,15 @@ def optionEight(cont):
 
 def optionNine(cont, destStation, searchMethod):
     # TODO Lab 11, conectar con la funcion del controller hasSearchPath
-    haspath = controller.searchPathTo(cont,destStation,searchMethod)
+    haspath = controller.hasSearchPath(cont,destStation,searchMethod)
     print(haspath)
 
 
 def optionTen(cont, destStation, searchMethod):
     # TODO Lab 11, conectar con la funcion del controller searchPathTo
-    path = None
+    path = controller.searchPathTo(cont,destStation,searchMethod)
     if path is not None:
-        print(path = controller.hasSearchPath(cont,destStation,searchMethod))
+        print(path)
     else:
         print('No hay camino')
 
@@ -168,7 +168,7 @@ def thread_cycle():
             print("Eliga tipo de grafo")
             print("1. bfs")
             print("2. dfs")
-            tipografo = str(input)
+            tipografo = str(input())
             print("Estación Base: BusStopCode-ServiceNo (Ej: 75009-10): ")
             initialStation = input()
             optionFive(cont,initialStation,tipografo)
@@ -186,7 +186,7 @@ def thread_cycle():
         elif int(inputs) == 9:
             # TODO Lab 11, completar inputs opt 9, destStation
             print("Ingrese el metodo de busqueda que desea usar")
-            print("1.bfs")
+            print("1. bfs")
             print("2. dfs")
             searchMethod= str(input())
             print("Ingrese Estacion destino")
@@ -195,11 +195,12 @@ def thread_cycle():
 
         elif int(inputs) == 10:
             # TODO Lab 11, completar inputs opt 10, destStation
-            destStation = input("Estación destino (Ej: 15151-10): ")
             print("Ingrese el metodo de busqueda que desea usar")
             print("1. bfs")
             print("2. dfs")
-            searchMethod = str(input())
+            searchMethod= str(input())
+            print("Ingrese Estacion destino")
+            destStation = input()
             optionTen(cont,destStation,searchMethod)
 
         else:

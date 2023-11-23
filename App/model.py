@@ -239,11 +239,11 @@ def hasSearchPath(analyzer, destStation, method):
     """
     # TODO Lab 11, ejecutar hasPathTo por dfs
     if method == "dfs":
-        return dfs.pathTo(analyzer["connections"],destStation)
+        rta =  dfs.hasPathTo(analyzer["search"],destStation)
     # TODO Lab 11, ejecutar hasPathTo por bfs
     elif method == "bfs":
-        return bfs.pathTo(analyzer["connections"],destStation)
-
+        rta = bfs.hasPathTo(analyzer["search"],destStation)
+    return rta
 
 def searchPathTo(analyzer, destStation, method):
     """
@@ -261,10 +261,10 @@ def searchPathTo(analyzer, destStation, method):
     path = None
     # TODO Lab 11, ejecutar pathTo por dfs
     if method == "dfs":
-        path = dfs.hasPathTo(analyzer["search"],destStation)
+        path = dfs.pathTo(analyzer["search"],destStation)
     # TODO Lab 11, ejecutar pathTo por bfs
     elif method == "bfs":
-        path = bfs.hasPathTo(analyzer["search"],destStation)
+        path = bfs.pathTo(analyzer["search"],destStation)
     return path
 
 

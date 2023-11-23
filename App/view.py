@@ -95,8 +95,8 @@ def optionFour(cont, initialStation):
 
 def optionFive(cont, initialStation, searchMethod):
     # TODO Lab 11, conectar con la funcion del controller searchPaths
-    return controller.searchPaths(cont,initialStation,searchMethod)
-
+    controller.searchPaths(cont,initialStation,searchMethod)
+    print("FIN")
 
 def optionSix(cont, initialStation, destStation):
     haspath = controller.hasPath(cont, destStation)
@@ -171,7 +171,7 @@ def thread_cycle():
             tipografo = str(input)
             msg = "Estación Base: BusStopCode-ServiceNo (Ej: 75009-10): "
             initialStation = input(msg)
-            controller.searchPaths(cont,initialStation,tipografo)
+            optionFive(cont,initialStation,tipografo)
         elif int(inputs) == 6:
             destStation = input("Estación destino (Ej: 15151-10): ")
             optionSix(cont, initialStation, destStation)
